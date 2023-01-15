@@ -67,3 +67,15 @@ print('Modelo entrenado!')
 plt.xlabel('# Epoca')
 plt.ylabel('Magnitud de pérdida')
 plt.plot(historial.history['loss'])
+
+
+# Prediccion
+print('Predicción')
+resultado = modelo.predict([100.0])
+print(f'El resultado es {str(resultado)} fahrenheit!')
+
+
+# Imprimir las variables internas del modelo
+print("Variables internas del modelo")
+print("[peso (primer array), sesgo (segundo array)]")
+print(capa.get_weights())
