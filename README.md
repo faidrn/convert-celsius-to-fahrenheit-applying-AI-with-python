@@ -84,6 +84,7 @@ The first neuron will have degrees Celsius, which will multiply with the weight 
 
 **Note:** It is important to keep in mind that when starting the weight and bias values start randomly.
 
+
 #### Example
 
 The network starts with weight of 1.5 and a bias of 4.
@@ -114,6 +115,7 @@ We have to use enough input and output examples
 **How to get the network to adjust its weights and biases in order to make the most accurate predictions possible?**
 
 In order to make the most accurate predictions possible, the network will take all the input data and for each one it will make a prediction. Since it is randomly initialized, you will not get correct predictions; but depending on how bad the results were, it will adjust the weights and biases.
+
 
 
 #### Now the code
