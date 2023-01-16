@@ -117,5 +117,38 @@ We have to use enough input and output examples
 In order to make the most accurate predictions possible, the network will take all the input data and for each one it will make a prediction. Since it is randomly initialized, you will not get correct predictions; but depending on how bad the results were, it will adjust the weights and biases.
 
 
-
 #### Now the code
+
+Import libraries 
+
+- tensorflow: library for machine learning and artificial intelligence.
+- numpy: library that supports creating large multidimensional vectors and matrices, along with a large collection of math functions.
+- matplotlib: library for the generation of two-dimensional graphs, from data contained in lists or arrays.
+- pyplot: matplotlib.pyplot is a collection of functions that make matplotlib work like MATLAB.
+
+```python
+import tensorflow as tf 
+import numpy as np 
+import matplotlib.pyplot as plt
+```
+
+Examples that the neural network will use to learn
+
+```python
+# Array of numbers with inputs in degrees celsius
+celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+
+# Array of numbers with outputs in degrees fahrenheit
+fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+```
+
+Neural network model
+
+We use keras as it allows to specify the input and output layers separately, or to specify only the output layer
+
+We create a layer of the Dense type, these layers are the ones that have connections from each neuron to all the neurons of the next layer
+
+```python
+capa = tf.keras.layers.Dense(units=1, input_shape=[1])
+```
+
