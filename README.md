@@ -146,9 +146,62 @@ Neural network model
 
 We use keras as it allows to specify the input and output layers separately, or to specify only the output layer
 
-We create a layer of the Dense type, these layers are the ones that have connections from each neuron to all the neurons of the next layer
+We create a layer of the Dense type, these layers are the ones that have connections from each neuron to all the neurons of the next layer.
+
+The sequential model is used which allows layers to be added in sequence.
 
 ```python
 capa = tf.keras.layers.Dense(units=1, input_shape=[1])
+modelo = tf.keras.Sequential([capa])
 ```
 
+The build prepares the model to be trained; we indicate how we want you to process mathematics so that you learn in a better way.
+
+We indicate 2 properties:
+
+- Optimizer: Adam is used, which allows the network to know how to adjust the weights and biases efficiently so that it learns and does not unlearn, that is, that little by little it improves instead of getting worse.
+
+- Loss function: for this function we use 'mean_squared_error', which considers that a few large errors are worse than a large number of small errors.
+
+```python
+modelo.compile(
+    optimizer = tf.keras.optimizers.Adam(0.1), 
+    loss = 'mean_squared_error'
+)
+```
+
+Training
+
+Sequential class . fit( ) method is used to train the model for the fixed number of epochs(iterations on a dataset).
+
+The number of turns (epochs) gives the model time to optimize itself as much as possible.
+
+```python
+historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
+```
+
+Print the result of the loss function
+
+```python
+plt.xlabel('# Epoca')
+plt.ylabel('Magnitud de pérdida')
+plt.plot(historial.history['loss'])
+```
+
+Prediction 
+
+As test case 100 degrees celsius was used.
+
+```python
+print('Predicción')
+resultado = modelo.predict([100.0])
+print(f'El resultado es {str(resultado)} fahrenheit!')
+```
+
+Print the internal variables of the model
+
+```python
+print("Variables internas del modelo")
+print("[peso (primer array), sesgo (segundo array)]")
+print(capa.get_weights())
+```
