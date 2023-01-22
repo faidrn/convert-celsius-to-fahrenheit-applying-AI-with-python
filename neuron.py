@@ -64,7 +64,7 @@ print('Modelo entrenado!')
 
 # Mostramos el resultado de la funcion de perdida
 # La funcion de perdida nos dice q tan mal estan los resultados de la red en cada vuelta que dió
-plt.xlabel('# Epoca')
+plt.xlabel('# de vuelta')
 plt.ylabel('Magnitud de pérdida')
 plt.plot(historial.history['loss'])
 

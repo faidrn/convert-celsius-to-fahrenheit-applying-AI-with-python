@@ -101,7 +101,7 @@ Therefore, at the moment the neural network predicts that 15 degrees Celsius wil
 
 ![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/ejemplo.png)
 
-We use google engine to check the answer.
+We use Google engine to check the answer.
 
 ![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/google.png)
 
@@ -117,7 +117,7 @@ We have to use enough input and output examples
 In order to make the most accurate predictions possible, the network will take all the input data and for each one it will make a prediction. Since it is randomly initialized, you will not get correct predictions; but depending on how bad the results were, it will adjust the weights and biases.
 
 
-#### Now the code
+## Now the code
 
 Import libraries 
 
@@ -183,7 +183,7 @@ historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
 Print the result of the loss function
 
 ```python
-plt.xlabel('# Epoca')
+plt.xlabel('# de vuelta')
 plt.ylabel('Magnitud de pérdida')
 plt.plot(historial.history['loss'])
 ```
@@ -205,3 +205,31 @@ print("Variables internas del modelo")
 print("[peso (primer array), sesgo (segundo array)]")
 print(capa.get_weights())
 ```
+
+## Training 
+
+After training the model, the following data is obtained:
+
+###### Result of the loss function
+
+This function shows us how bad the results of the network are in each turn (epochs) that it gave.
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/grafica.png)
+
+In this graph we can see that with each new lap the errors are smaller, so with 500 or 600 laps it is enough because after these values the data does not improve any more, the graph tends to be the same.
+
+
+###### Prediction 
+
+**NOTE:** As test case 100 degrees celsius was used.
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/prediccion.png)
+
+In the picture we can see the result 211.7413.
+
+If we use Google engine to check this answer, we get the following:
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/google2.png)
+
+
+With this result it can be concluded that the model is well trained.
