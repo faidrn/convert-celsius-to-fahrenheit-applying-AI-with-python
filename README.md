@@ -225,7 +225,7 @@ In this graph we can see that with each new lap the errors are smaller, so with 
 
 ![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/prediccion.png)
 
-In the picture we can see the result 211.7413.
+In the picture we can see the result 211.74191.
 
 If we use Google engine to check this answer, we get the following:
 
@@ -233,3 +233,29 @@ If we use Google engine to check this answer, we get the following:
 
 
 With this result it can be concluded that the model is well trained.
+
+
+###### Now, let's look at the internal structure of the network.
+
+Print the internal variables of the model:
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/variablesInternas.png)
+
+It assigned 1.7982904 to the weight and 31.912878 to the bias, let's continue with the explanation graphically:
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/structureNetwork.png)
+
+The input is 100, this data is multiplied by 1,798; 31.9 is added to the result of the multiplication, obtaining as a final result 211.74.
+
+Now, let's compare this process with the equation for converting degrees Celsius to degrees Fahrenheit:
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/comparacion.png)
+
+- 1.798 is practically 1.8
+- 31.9 is practically 32
+
+The network, without knowing the equation, was able to obtain a result quite close to the real value. This is possible because the process is a linear equation and the conversion equation applies perfectly with the network. 
+
+![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/funcionLineal.png)
+
+First, it does a multiplicacion and after an addition
