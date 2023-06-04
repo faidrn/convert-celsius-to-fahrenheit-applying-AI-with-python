@@ -13,7 +13,7 @@ Normally, we programming algorithms to become inputs in outputs; so, we write th
 
 ### Machine learning
 
-We have a list of inputs and outputs, but we don't know how turn that inputs in that outputs. That is, we don't know the algorithm that can do the conversion.
+We have a list of inputs and outputs, but we don't know how turn those inputs in those outputs. That is, we don't know the algorithm that can do the conversion.
 
 ![](https://github.com/faidrn/convert-celsius-to-fahrenheit-applying-AI-with-python/blob/main/resources/images/machineLearning.png)
 
